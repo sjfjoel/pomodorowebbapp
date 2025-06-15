@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=240, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="pomodorostyle.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <img src="Logo.png" alt="Pomodoro" class="logo">
+        <div class="username">Joel Fernandez</div>
+    </nav>
+
+    <!-- Main Timer Container -->
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="stopwatch">
+            <svg id="clockSVG" width="240" height="240" viewBox="0 0 240 240">
+                <!-- Background circle -->
+                <circle cx="120" cy="120" r="100" fill="#fff" stroke="#f8bbd0" stroke-width="6"/>
+                <!-- Progress arc (work duration highlight) -->
+                <circle id="progressArc" cx="120" cy="120" r="100" fill="none" stroke="#f06292" stroke-width="9"
+                    stroke-linecap="round"
+                    stroke-dasharray="628.318" stroke-dashoffset="0"
+                    transform="rotate(-90 120 120)"/>
+            </svg>
+            <div id="timerDisplay" class="timer-display">25:00</div>
+        </div>
+        <!-- Timer Controls -->
+        <div class="controls">
+            <button id="start" class="theme-btn">Start</button>
+            <button id="stop" class="theme-btn">Stop</button>
+            <button id="reset" class="theme-btn">Reset</button>
+        </div>
+        <!-- Status Display -->
+        <div class="status">
+            <span id="intervalType">Focus</span>
+            <span id="cycleCount"></span>
+        </div>
+    </div>
+
+    <!-- Timer End Chime -->
+    <audio id="chime" src="buzzer_sound.mp3" preload="auto"></audio>
+
+    <!-- Motivation Popup -->
+    <div id="motivation-popup" class="motivation-popup">
+        <span id="motivation-message">Great job! Take a short break and come back stronger! 💪</span>
+        <br>
+        <button id="motivation-ok" class="theme-btn">OK</button>
+    </div>
+
+    <!-- Main Script -->
+    <script src="pomodoroscript.js"></script>
+</body>
+</html>

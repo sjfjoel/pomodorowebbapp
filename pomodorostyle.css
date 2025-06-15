@@ -1,0 +1,174 @@
+/* Pomodoro Timer Stylesheet */
+
+/* --- Base Styles --- */
+body {
+    background: #fff0f6;
+    color: #ad1457;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- Main Container --- */
+.container {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(173, 20, 87, 0.10);
+    max-width: 420px;
+    margin: 8px auto 40px auto;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+}
+
+/* Blur effect when popup is open */
+.container.blur {
+    filter: blur(2px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* --- Headings --- */
+h1 {
+    color: #ad1457;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+}
+
+/* --- Stopwatch / Timer Display --- */
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timer-display {
+    position: absolute;
+    top: center;
+    left: 0;
+    width: 240px;
+    text-align: center;
+    font-size: 2.9em;
+    font-family: monospace;
+    color: #ad1457;
+    text-shadow:
+        0 0 12px #f06292,
+        0 0 2px #ad1457,
+        0 2px 8px #ad1457;
+    pointer-events: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* --- Controls --- */
+.controls {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+button {
+    background: #fff;
+    color: #ad1457;
+    border: 2px solid #f06292;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(173, 20, 87, 0.10);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+button:hover,
+button:focus {
+    background: #f06292;
+    color: #fff !important;
+    border-color: #f06292;
+    outline: none;
+}
+
+/* --- Status Display --- */
+.status {
+    margin-top: 18px;
+    font-size: 1.1em;
+    color: #ad1457;
+    letter-spacing: 1px;
+}
+
+/* --- SVG Progress Arc --- */
+#progressArc {
+    stroke: #f06292;
+}
+
+/* --- Navbar --- */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+    box-sizing: border-box;
+    background: #fff0f6;
+    position: relative;
+    z-index: 200;
+    min-height: 60px;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+}
+
+.username {
+    font-size: 1.35em;
+    color: #ad1457;
+    background: #efc3d5;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(173,20,87,0.08);
+    letter-spacing: 1px;
+    border: 1.5px solid #ad1457;
+}
+
+/* --- Motivation Popup --- */
+.motivation-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: rgba(255, 240, 246, 0.7);
+    color: #ad1457;
+    border: 2px solid #f06292;
+    border-radius: 18px;
+    padding: 32px 48px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 8px 32px rgba(173, 20, 87, 0.18);
+    z-index: 9999;
+    text-align: center;
+    animation: popup-bounce 0.7s;
+}
+
+#motivation-ok {
+    font-size: 1em;
+    padding: 6px 18px;
+    border-radius: 14px;
+    margin-top: 10px;
+}
+
+/* --- Popup Animation --- */
+@keyframes popup-bounce {
+    0% { transform: translate(-50%, -50%) scale(0.7);}
+    60% { transform: translate(-50%, -50%) scale(1.1);}
+    100% { transform: translate(-50%, -50%) scale(1);}
+}
