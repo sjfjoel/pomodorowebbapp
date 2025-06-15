@@ -1,7 +1,7 @@
 // Pomodoro Timer Script
 
 // --- Configuration ---
-const workDuration = 5; // 25 * 60 for 25 minutes.
+const workDuration = 25 * 60; for 25 minutes.
 
 // --- State Variables ---
 let secondsLeft = workDuration;
